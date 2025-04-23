@@ -43,7 +43,7 @@
  *********************************************************************************************************************/
 
 #include "Rte_CtLedTask.h" /* PRQA S 0857 */ /* MD_MSR_1.1_857 */
-
+# include "Com_Cfg.h"
 
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << Start of include and declaration area >>        DO NOT CHANGE THIS COMMENT!
@@ -77,7 +77,13 @@
 
 #define CtLedTask_START_SEC_CODE
 #include "CtLedTask_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+#include "Appl_Cbk.h"
 
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of documentation area >>                  DO NOT CHANGE THIS COMMENT!
+ * Symbol: CtLedTask_ComCbkRx_RearLeftWindowPosition_doc
+ *********************************************************************************************************************/
 /**********************************************************************************************************************
  *
  * Runnable Entity Name: CtLedTask_InitRunnable
@@ -155,24 +161,39 @@ FUNC(void, CtLedTask_CODE) LedRunnable(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
  * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
  * Symbol: LedRunnable
  *********************************************************************************************************************/
-
+Std_ReturnType ret = RTE_E_OK;
 static unsigned char  LedState=0;
 static int  LedCnt=0;
-
+static unsigned char sig_data =1,sig_data2=1;
+static unsigned char ComSendCnt = 0;
+ComSendCnt++;
 LedCnt++;
 
 LedState ^= 0x01;
-
-
-
  Dio_WriteChannel(112,LedState);
 
+
+//ret = Rte_Write_LampCnt_u8_Signal(LedCnt);
+//ret = Rte_Write_RearInterLight_Bool_Signal(1);
+
+//Com_SendSignal(ComConf_ComSignal_RearLeft_Window,&ComSendCnt);
+//Com_SendSignal(ComConf_ComSignal_RearRight_Window,&sig_data2);
+//Com_SendSignalGroup(ComConf_ComSignalGroup_MySignalGroup);
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
 }
+static unsigned char cbkcnt = 0;
+FUNC(void, COM_APPL_CODE) ComCbkRx_RearLeftWindowPosition(void)
+{
+    cbkcnt = 1;
+}
 
+FUNC(void, COM_APPL_CODE) ComCbkToutRx_RearLeftWindowPosition(void)
+{
 
+    Com_SendSignal(ComConf_ComSignal_RearLeft_Window,&cbkcnt);
+}
 #define CtLedTask_STOP_SEC_CODE
 #include "CtLedTask_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 

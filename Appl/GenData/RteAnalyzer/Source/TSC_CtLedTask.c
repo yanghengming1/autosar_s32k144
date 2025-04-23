@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  TSC_CtLedTask.c
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *   ECU-Project:  MyECU
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
@@ -73,6 +73,21 @@ Std_ReturnType TSC_CtLedTask_Rte_Call_UR_CN_CAN00_06ecbb07_RequestComMode(ComM_M
 
 
 
+
+Std_ReturnType TSC_CtLedTask_Rte_Write_LampCnt_u8_Signal(uint8 data)
+{
+  return Rte_Write_LampCnt_u8_Signal(data);
+}
+
+Std_ReturnType TSC_CtLedTask_Rte_Write_RearInterLight_Bool_Signal(boolean data)
+{
+  return Rte_Write_RearInterLight_Bool_Signal(data);
+}
+
+Std_ReturnType TSC_CtLedTask_Rte_Write_RearLeftWindow_u8_signal(uint8 data)
+{
+  return Rte_Write_RearLeftWindow_u8_signal(data);
+}
 
 
 

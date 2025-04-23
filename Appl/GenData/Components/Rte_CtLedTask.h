@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte_CtLedTask.h
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *   ECU-Project:  MyECU
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
@@ -45,6 +45,39 @@ extern "C"
 
 
 # ifndef RTE_CORE
+/**********************************************************************************************************************
+ * Init Values for unqueued S/R communication (primitive types only)
+ *********************************************************************************************************************/
+
+#  define Rte_InitValue_LampCnt_u8_Signal (0U)
+#  define Rte_InitValue_RearInterLight_Bool_Signal (FALSE)
+#  define Rte_InitValue_RearLeftWindow_u8_signal (0U)
+# endif
+
+
+# define RTE_START_SEC_CODE
+# include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/**********************************************************************************************************************
+ * API prototypes
+ *********************************************************************************************************************/
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_CtLedTask_LampCnt_u8_Signal(uint8 data); /* PRQA S 0850 */ /* MD_MSR_19.8 */
+FUNC(Std_ReturnType, RTE_CODE) Rte_Write_CtLedTask_RearInterLight_Bool_Signal(boolean data); /* PRQA S 0850 */ /* MD_MSR_19.8 */
+
+# define RTE_STOP_SEC_CODE
+# include "MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+# ifndef RTE_CORE
+
+/**********************************************************************************************************************
+ * Rte_Write_<p>_<d> (explicit S/R communication with isQueued = false)
+ *********************************************************************************************************************/
+#  define Rte_Write_LampCnt_u8_Signal Rte_Write_CtLedTask_LampCnt_u8_Signal
+#  define Rte_Write_RearInterLight_Bool_Signal Rte_Write_CtLedTask_RearInterLight_Bool_Signal
+#  define Rte_Write_RearLeftWindow_u8_signal Rte_Write_CtLedTask_RearLeftWindow_u8_signal
+#  define Rte_Write_CtLedTask_RearLeftWindow_u8_signal(data) (RTE_E_OK) /* PRQA S 3453 */ /* MD_MSR_19.7 */
+
 
 /**********************************************************************************************************************
  * Rte_Call_<p>_<o> (unmapped) for synchronous C/S communication

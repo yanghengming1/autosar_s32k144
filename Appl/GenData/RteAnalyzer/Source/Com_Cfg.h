@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Com_Cfg.h
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *   ECU-Project:  MyECU
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
@@ -22,6 +22,10 @@
 #ifndef _COM_CFG_H_
 # define _COM_CFG_H_
 
+
+# define ComConf_ComSignal_sig_LampCnt_omsg_MyECU_Lamp_oCAN00_f37e68ea_Tx 0
+
+# define ComConf_ComSignal_sig_RearInteriorLight_omsg_Transmit_oCAN00_49a633c1_Tx 1
 
 
 #endif /* _COM_CFG_H_ */

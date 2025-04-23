@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  TSC_CtLedTask.h
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *   ECU-Project:  MyECU
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
@@ -19,6 +19,11 @@
  *   Description:  Header of wrapper software component for Bte-based Rte test cases
  *********************************************************************************************************************/
 
+
+/** Sender receiver - explicit write services */
+Std_ReturnType TSC_CtLedTask_Rte_Write_LampCnt_u8_Signal(uint8 data);
+Std_ReturnType TSC_CtLedTask_Rte_Write_RearInterLight_Bool_Signal(boolean data);
+Std_ReturnType TSC_CtLedTask_Rte_Write_RearLeftWindow_u8_signal(uint8 data);
 
 /** Service interfaces */
 Std_ReturnType TSC_CtLedTask_Rte_Call_UR_CN_CAN00_06ecbb07_GetCurrentComMode(ComM_ModeType *ComMode);

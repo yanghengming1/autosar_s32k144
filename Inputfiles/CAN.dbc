@@ -36,6 +36,14 @@ BS_:
 BU_: Tester RearECU MyECU
 
 
+BO_ 544 msg_Receive2: 8 RearECU
+ SG_ sig_RearRightWindowPosition : 8|8@1+ (1,0) [0|255] ""  MyECU
+ SG_ sig_RearLeftWindowPosition : 56|8@1+ (1,0) [0|255] ""  MyECU
+
+BO_ 1536 Rear_MyECU: 1 MyECU
+ SG_ Rear_RightWindow : 1|1@1+ (1,0) [0|1] ""  RearECU
+ SG_ Rear_LeftWindow : 0|1@1+ (1,0) [0|1] ""  RearECU
+
 BO_ 1297 msg_MyECU_Lamp: 8 MyECU
  SG_ sig_LampCnt : 7|8@0+ (1,0) [0|255] ""  RearECU
 
@@ -135,6 +143,7 @@ BA_ "BusType" "CAN";
 BA_ "NmType" "NmAsr";
 BA_ "Manufacturer" "Vector";
 BA_ "NmAsrNodeIdentifier" BU_ RearECU 1;
+BA_ "GenMsgCycleTime" BO_ 544 100;
 BA_ "GenMsgCycleTime" BO_ 1297 100;
 BA_ "GenMsgSendType" BO_ 1297 0;
 BA_ "GenMsgCycleTime" BO_ 1025 100;

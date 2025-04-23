@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Can.c
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *    BSW Module:  Can
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

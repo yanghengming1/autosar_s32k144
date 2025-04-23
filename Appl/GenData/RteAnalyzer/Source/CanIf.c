@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  CanIf.c
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *    BSW Module:  CanIf
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

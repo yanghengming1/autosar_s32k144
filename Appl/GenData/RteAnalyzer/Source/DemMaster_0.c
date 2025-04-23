@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  DemMaster_0.c
- *        Config:  S32K144_Start.dpa
+ *        Config:  S32K144_Start.dpa"
  *     SW-C Type:  DemMaster_0
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
