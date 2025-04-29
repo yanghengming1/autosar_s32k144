@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Types_Lcfg.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-04-29 17:39:53
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -70,10 +70,13 @@
 #define CanIsr_0_MB16To31 CanIsr_0_MB16To31
 #define CounterIsr_SystemTimer CounterIsr_SystemTimer
 #define GptIsr_LpitChannel0 GptIsr_LpitChannel0
+#define OsIsr_Ftm1Channel0 OsIsr_Ftm1Channel0
+#define OsIsr_WDG OsIsr_WDG
 
 /* Alarm identifiers. */
 #define Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms
 #define Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms
+#define Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms
 #define Rte_Al_TE_CanTp_CanTp_MainFunction Rte_Al_TE_CanTp_CanTp_MainFunction
 #define Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable
 #define Rte_Al_TE_CpLedTask_LedRunnable Rte_Al_TE_CpLedTask_LedRunnable
@@ -149,7 +152,9 @@ typedef enum
   CanIsr_0_MB16To31 = 2,
   CounterIsr_SystemTimer = 3,
   GptIsr_LpitChannel0 = 4,
-  OS_ISRID_COUNT = 5,
+  OsIsr_Ftm1Channel0 = 5,
+  OsIsr_WDG = 6,
+  OS_ISRID_COUNT = 7,
   INVALID_ISR = OS_ISRID_COUNT
 } ISRType;
 
@@ -158,10 +163,11 @@ typedef enum
 {
   Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms = 0,
   Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms = 1,
-  Rte_Al_TE_CanTp_CanTp_MainFunction = 2,
-  Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable = 3,
-  Rte_Al_TE_CpLedTask_LedRunnable = 4,
-  OS_ALARMID_COUNT = 5
+  Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms = 2,
+  Rte_Al_TE_CanTp_CanTp_MainFunction = 3,
+  Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable = 4,
+  Rte_Al_TE_CpLedTask_LedRunnable = 5,
+  OS_ALARMID_COUNT = 6
 } AlarmType;
 
 /*! Counter identifiers. */

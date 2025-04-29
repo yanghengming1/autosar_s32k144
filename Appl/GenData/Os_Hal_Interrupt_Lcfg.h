@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Interrupt_Lcfg.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-04-29 17:39:53
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -87,6 +87,12 @@ extern CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_CounterIsr_Syst
 
 /*! HAL ISR configuration data: GptIsr_LpitChannel0 */
 extern CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_GptIsr_LpitChannel0;
+
+/*! HAL ISR configuration data: OsIsr_Ftm1Channel0 */
+extern CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_OsIsr_Ftm1Channel0;
+
+/*! HAL ISR configuration data: OsIsr_WDG */
+extern CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_OsIsr_WDG;
 
 # define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */

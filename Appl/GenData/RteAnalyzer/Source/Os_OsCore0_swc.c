@@ -62,6 +62,12 @@
  * GetElapsedValue of Port Interface Os_Service
  *   
  *
+ *
+ * Mode Declaration Groups:
+ * ========================
+ * WdgM_Mode
+ *   
+ *
  *********************************************************************************************************************/
 
 #include "Rte_Os_OsCore0_swc.h" /* PRQA S 0857 */ /* MD_MSR_1.1_857 */

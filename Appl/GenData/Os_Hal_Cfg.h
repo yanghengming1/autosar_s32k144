@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Cfg.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-04-29 17:39:53
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -57,6 +57,10 @@
 # define OS_ISR_COUNTERISR_SYSTEMTIMER_LEVEL     (32)
 # define OS_ISR_GPTISR_LPITCHANNEL0_CORE      (0)
 # define OS_ISR_GPTISR_LPITCHANNEL0_LEVEL     (70)
+# define OS_ISR_OSISR_FTM1CHANNEL0_CORE      (0)
+# define OS_ISR_OSISR_FTM1CHANNEL0_LEVEL     (65)
+# define OS_ISR_OSISR_WDG_CORE      (0)
+# define OS_ISR_OSISR_WDG_LEVEL     (20)
 
 /* Hardware counter timing macros */
 

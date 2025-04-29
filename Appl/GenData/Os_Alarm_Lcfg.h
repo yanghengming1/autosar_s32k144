@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Alarm_Lcfg.h
- *   Generation Time: 2021-06-06 16:46:36
+ *   Generation Time: 2025-04-29 17:39:53
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -76,6 +76,9 @@ extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask
 
 /*! Alarm configuration data: Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms;
+
+/*! Alarm configuration data: Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms */
+extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms;
 
 /*! Alarm configuration data: Rte_Al_TE_CanTp_CanTp_MainFunction */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_CanTp_CanTp_MainFunction;

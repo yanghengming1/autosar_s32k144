@@ -211,7 +211,7 @@ extern "C"{
 
 #define GPT_LPIT_USED (STD_ON)
 
-#define GPT_FTM_USED (STD_OFF)
+#define GPT_FTM_USED (STD_ON)
 
 /**
 * @{
@@ -220,6 +220,10 @@ extern "C"{
 
 /** @violates @ref GPT_CFG_H_REF_2 Identifier clash */
 #define GptConf_GptChannelConfiguration_GptChannelConfiguration  (0U)
+
+
+/** @violates @ref GPT_CFG_H_REF_2 Identifier clash */
+#define GptConf_GptChannelConfiguration_GptChannelConfiguration_WDG  (1U)
 
 
 /*@}*/
@@ -248,6 +252,8 @@ extern "C"{
 
 
 
+#define GPT_FTM_1_CH_0_CH_1_ISR_USED
+
 
 
 
@@ -259,13 +265,14 @@ extern "C"{
 * @brief Defines for HW IPs will be used by GPT driver
 */
 #define GPT_LPIT_0_USED
+#define GPT_FTM_1_USED
 
 #define GPT_PRECOMPILE_SUPPORT  (STD_ON)
 
 /**
 * @brief The maxiumum number of HW channels. This is used to allocate memory space for channel runtime info.
 */
-#define GPT_HW_CHANNEL_NUM   (1U)
+#define GPT_HW_CHANNEL_NUM   (2U)
 
 
 

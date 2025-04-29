@@ -78,6 +78,9 @@
  * EcuM_UserType: Integer in interval [0...255]
  * NetworkHandleType: Integer in interval [0...255]
  * TimeInMicrosecondsType: Integer in interval [0...4294967295]
+ * WdgM_CheckpointIdType: Integer in interval [0...65535]
+ * WdgM_ModeType: Integer in interval [0...255]
+ * WdgM_SupervisedEntityIdType: Integer in interval [0...65535]
  * boolean: Boolean (standard type)
  * sint8: Integer in interval [-128...127] (standard type)
  * uint16: Integer in interval [0...65535] (standard type)
@@ -120,6 +123,9 @@
  * EcuM_ModeType: Enumeration of integer in interval [0...3] with enumerators
  * EcuM_ShutdownCauseType: Enumeration of integer in interval [0...3] with enumerators
  * EcuM_StateType: Enumeration of integer in interval [0...144] with enumerators
+ * WdgMMode: Enumeration of integer in interval [0...255] with enumerators
+ * WdgM_GlobalStatusType: Enumeration of integer in interval [0...4] with enumerators
+ * WdgM_LocalStatusType: Enumeration of integer in interval [0...4] with enumerators
  *
  * Array Types:
  * ============

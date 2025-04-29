@@ -672,6 +672,65 @@
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!      << End of compiler abstraction implementation >>        DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!     << Start of compiler abstraction implementation >>       DO NOT CHANGE THIS COMMENT!
+ * Symbol: RTE_WDGM_APPL
+ *********************************************************************************************************************/
+
+/* used for references on application variables */
+# define RTE_WDGM_APPL_VAR
+
+/* used for references on application data (constants or variables) */
+# define RTE_WDGM_APPL_DATA
+
+/* used for references on application functions */
+# define RTE_WDGM_APPL_CODE
+
+/* used for references on application constants */
+# define RTE_WDGM_APPL_CONST
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!      << End of compiler abstraction implementation >>        DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!     << Start of compiler abstraction implementation >>       DO NOT CHANGE THIS COMMENT!
+ * Symbol: WdgM_CODE
+ *********************************************************************************************************************/
+
+/* used for SWC specific code */
+# define WdgM_CODE
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!      << End of compiler abstraction implementation >>        DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!     << Start of compiler abstraction implementation >>       DO NOT CHANGE THIS COMMENT!
+ * Symbol: WdgM_CONST
+ *********************************************************************************************************************/
+
+/* used for global or static SWC specific constants */
+# define WdgM_CONST
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!      << End of compiler abstraction implementation >>        DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!     << Start of compiler abstraction implementation >>       DO NOT CHANGE THIS COMMENT!
+ * Symbol: WdgM_VAR
+ *********************************************************************************************************************/
+
+/* used for all global or static SWC specific variables that are not initialized by the startup code of the compiler */
+# define WdgM_VAR_NOINIT
+
+/* used for global or static SWC specific variables that are initialized by the startup code of the compiler */
+# define WdgM_VAR_INIT
+
+/* used for global or static SWC specific variables that are initialized with zero by the startup code of the compiler */
+# define WdgM_VAR_ZERO_INIT
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!      << End of compiler abstraction implementation >>        DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
 
 
 /**********************************************************************************************************************

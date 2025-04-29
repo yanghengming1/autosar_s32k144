@@ -40,6 +40,7 @@
 #include "Rte_Det.h"
 #include "Rte_EcuM.h"
 #include "Rte_Os_OsCore0_swc.h"
+#include "Rte_WdgM.h"
 #include "SchM_BswM.h"
 #include "SchM_Can.h"
 #include "SchM_CanIf.h"
@@ -57,6 +58,8 @@
 #include "SchM_PduR.h"
 #include "SchM_Port.h"
 #include "SchM_Spi.h"
+#include "SchM_Wdg.h"
+#include "SchM_WdgM.h"
 
 #include "Rte_Hook.h"
 
@@ -173,6 +176,7 @@ VAR(BswM_ESH_Mode, RTE_VAR_NOINIT) Rte_ModeMachine_BswM_Switch_ESH_ModeSwitch_Bs
 #define RTE_CONST_MSEC_SystemTimer_20 (20UL)
 #define RTE_CONST_MSEC_SystemTimer_300 (300UL)
 #define RTE_CONST_MSEC_SystemTimer_5 (5UL)
+#define RTE_CONST_MSEC_SystemTimer_50 (50UL)
 
 
 /**********************************************************************************************************************
@@ -207,6 +211,7 @@ FUNC(void, RTE_CODE) SchM_Init(void)
   /* activate the alarms used for TimingEvents */
   (void)SetRelAlarm(Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms, RTE_MSEC_SystemTimer(0) + (TickType)1, RTE_MSEC_SystemTimer(10)); /* PRQA S 3417 */ /* MD_Rte_Os */
   (void)SetRelAlarm(Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms, RTE_MSEC_SystemTimer(0) + (TickType)1, RTE_MSEC_SystemTimer(20)); /* PRQA S 3417 */ /* MD_Rte_Os */
+  (void)SetRelAlarm(Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms, RTE_MSEC_SystemTimer(0) + (TickType)1, RTE_MSEC_SystemTimer(50)); /* PRQA S 3417 */ /* MD_Rte_Os */
   (void)SetRelAlarm(Rte_Al_TE_CanTp_CanTp_MainFunction, RTE_MSEC_SystemTimer(0) + (TickType)1, RTE_MSEC_SystemTimer(5)); /* PRQA S 3417 */ /* MD_Rte_Os */
 
 }
@@ -245,6 +250,7 @@ FUNC(void, RTE_CODE) SchM_Deinit(void)
   /* deactivate alarms */
   (void)CancelAlarm(Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms); /* PRQA S 3417 */ /* MD_Rte_Os */
   (void)CancelAlarm(Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms); /* PRQA S 3417 */ /* MD_Rte_Os */
+  (void)CancelAlarm(Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms); /* PRQA S 3417 */ /* MD_Rte_Os */
   (void)CancelAlarm(Rte_Al_TE_CanTp_CanTp_MainFunction); /* PRQA S 3417 */ /* MD_Rte_Os */
 
 }
@@ -1302,6 +1308,29 @@ FUNC(Std_ReturnType, RTE_CODE) Rte_Switch_Dcm_DcmEcuReset_DcmEcuReset(Dcm_EcuRes
 
 
 /**********************************************************************************************************************
+ * Mode Switch API (Rte_Switch)
+ *********************************************************************************************************************/
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_Switch_WdgM_globalmode_Core0_currentMode(WdgMMode nextMode) /* PRQA S 0850, 1505, 3206 */ /* MD_MSR_19.8, MD_MSR_8.10, MD_Rte_3206 */
+{
+  Std_ReturnType ret = RTE_E_OK;
+
+  nextMode = nextMode;
+
+  return ret;
+}
+
+FUNC(Std_ReturnType, RTE_CODE) Rte_Switch_WdgM_mode_WdgMSupervisedEntity_currentMode(WdgMMode nextMode) /* PRQA S 0850, 1505, 3206 */ /* MD_MSR_19.8, MD_MSR_8.10, MD_Rte_3206 */
+{
+  Std_ReturnType ret = RTE_E_OK;
+
+  nextMode = nextMode;
+
+  return ret;
+}
+
+
+/**********************************************************************************************************************
  * Task bodies for RTE controlled tasks
  *********************************************************************************************************************/
 
@@ -1349,9 +1378,9 @@ TASK(OsTask_BSW_SCHM) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
 
   for(;;)
   {
-    (void)WaitEvent(Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms | Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_20ms | Rte_Ev_Run_CanTp_CanTp_MainFunction); /* PRQA S 3417 */ /* MD_Rte_Os */
+    (void)WaitEvent(Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms | Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_20ms | Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_50ms | Rte_Ev_Run_CanTp_CanTp_MainFunction); /* PRQA S 3417 */ /* MD_Rte_Os */
     (void)GetEvent(OsTask_BSW_SCHM, &ev); /* PRQA S 3417 */ /* MD_Rte_Os */
-    (void)ClearEvent(ev & (Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms | Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_20ms | Rte_Ev_Run_CanTp_CanTp_MainFunction)); /* PRQA S 3417 */ /* MD_Rte_Os */
+    (void)ClearEvent(ev & (Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms | Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_20ms | Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_50ms | Rte_Ev_Run_CanTp_CanTp_MainFunction)); /* PRQA S 3417 */ /* MD_Rte_Os */
 
     if ((ev & Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms) != (EventMaskType)0)
     {
@@ -1405,6 +1434,12 @@ TASK(OsTask_BSW_SCHM) /* PRQA S 3408, 1503 */ /* MD_Rte_3408, MD_MSR_14.1 */
 
       /* call runnable */
       Dem_SatelliteMainFunction();
+    }
+
+    if ((ev & Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_50ms) != (EventMaskType)0)
+    {
+      /* call runnable */
+      WdgM_MainFunction();
     }
   }
 } /* PRQA S 6010, 6030, 6050, 6080 */ /* MD_MSR_STPTH, MD_MSR_STCYC, MD_MSR_STCAL, MD_MSR_STMIF */
