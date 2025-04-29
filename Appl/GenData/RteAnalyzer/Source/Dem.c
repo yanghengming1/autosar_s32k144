@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Dem.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *    BSW Module:  Dem
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

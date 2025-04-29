@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Os_OsCore0_swc.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *     SW-C Type:  Os_OsCore0_swc
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  CddSbc.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *     SW-C Type:  CddSbc
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  CtLedTask.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *     SW-C Type:  CtLedTask
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

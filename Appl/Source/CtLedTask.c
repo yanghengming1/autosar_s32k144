@@ -129,6 +129,8 @@ FUNC(void, CtLedTask_CODE) CtLedTask_InitRunnable(void) /* PRQA S 0850 */ /* MD_
  * Symbol: CtLedTask_InitRunnable
  *********************************************************************************************************************/
 
+    Gpt_EnableNotification(0);
+    Gpt_StartTimer(0,240000); //x/24000000 = 0.01s,x=240000,10ms
 Rte_Call_UR_CN_CAN00_06ecbb07_RequestComMode(COMM_FULL_COMMUNICATION);
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
@@ -162,15 +164,13 @@ FUNC(void, CtLedTask_CODE) LedRunnable(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
  * Symbol: LedRunnable
  *********************************************************************************************************************/
 Std_ReturnType ret = RTE_E_OK;
-static unsigned char  LedState=0;
-static int  LedCnt=0;
+
 static unsigned char sig_data =1,sig_data2=1;
 static unsigned char ComSendCnt = 0;
-ComSendCnt++;
-LedCnt++;
 
-LedState ^= 0x01;
- Dio_WriteChannel(112,LedState);
+
+
+ //Dio_WriteChannel(112,LedState);
 
 
 //ret = Rte_Write_LampCnt_u8_Signal(LedCnt);
@@ -183,6 +183,21 @@ LedState ^= 0x01;
  * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
  *********************************************************************************************************************/
 }
+void GPT_10ms(void)
+{
+    static unsigned char  LedState = 0;
+    static uint32 Cbkcnt = 0;
+    Cbkcnt++;
+    if(Cbkcnt >= 100)
+    {
+        LedState ^= 0x01;
+        Dio_WriteChannel(112,LedState);
+        Cbkcnt = 0;
+    }
+    
+
+}
+
 static unsigned char cbkcnt = 0;
 FUNC(void, COM_APPL_CODE) ComCbkRx_RearLeftWindowPosition(void)
 {

@@ -9,7 +9,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Rte.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *   ECU-Project:  MyECU
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
@@ -52,6 +52,7 @@
 #include "SchM_Det.h"
 #include "SchM_Dio.h"
 #include "SchM_EcuM.h"
+#include "SchM_Gpt.h"
 #include "SchM_Mcu.h"
 #include "SchM_PduR.h"
 #include "SchM_Port.h"

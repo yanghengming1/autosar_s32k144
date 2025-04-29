@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  Dio.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *    BSW Module:  Dio
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0

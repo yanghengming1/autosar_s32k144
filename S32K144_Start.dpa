@@ -124,6 +124,9 @@
         <Splitter File=".\Config\ECUC\S32K144_Start_Spi_ecuc.arxml">
             <Module Name="Spi"/>
         </Splitter>
+        <Splitter File=".\Config\ECUC\S32K144_Start_Gpt_ecuc.arxml">
+            <Module Name="Gpt"/>
+        </Splitter>
         <OwnFolderForEachSplitter>false</OwnFolderForEachSplitter>
     </EcucSplitter>
     <Display LastVersion="5.18.37 SP1">

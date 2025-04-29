@@ -2,7 +2,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *          File:  BswM.c
- *        Config:  S32K144_Start.dpa"
+ *        Config:  S32K144_Start.dpa
  *     SW-C Type:  BswM
  *
  *     Generator:  MICROSAR RTE Generator Version 4.19.0
