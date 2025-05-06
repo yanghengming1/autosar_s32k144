@@ -286,5 +286,13 @@
         <Component Name="CpAppTask" GenerationEnabled="true"/>
         <Component Name="Cdd_SBC_UJA1169" GenerationEnabled="true"/>
         <Component Name="CddSbc" GenerationEnabled="true"/>
+        <Component Name="CPUload_SWC" GenerationEnabled="true"/>
+        <Component Name="EMC_SWC" GenerationEnabled="true"/>
+        <Component Name="LOCK_SWC" GenerationEnabled="true"/>
+        <Component Name="PWL_SWC" GenerationEnabled="true"/>
+        <Component Name="CPUload" GenerationEnabled="true"/>
+        <Component Name="EMC" GenerationEnabled="true"/>
+        <Component Name="LOCK" GenerationEnabled="true"/>
+        <Component Name="PWL" GenerationEnabled="true"/>
     </SwctGeneration>
 </ProjectAssistant>

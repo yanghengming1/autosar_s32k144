@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_MemMap.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-05-05 15:26:15
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -287,6 +287,90 @@
 # undef OS_OsTask_BSW_SCHM_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # pragma default_function_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
 # undef OS_STOP_SEC_OsTask_BSW_SCHM_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsTask_CPUload_1s_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsTask_CPUload_1s_CODE_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_function_attributes = @ ".OS_OsTask_CPUload_1s_CODE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsTask_CPUload_1s_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsTask_CPUload_1s_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsTask_CPUload_1s_CODE_OPEN
+#  error Section OS_OsTask_CPUload_1s_CODE is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsTask_CPUload_1s_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_function_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsTask_CPUload_1s_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsTask_DLK_100ms_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsTask_DLK_100ms_CODE_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_function_attributes = @ ".OS_OsTask_DLK_100ms_CODE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsTask_DLK_100ms_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsTask_DLK_100ms_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsTask_DLK_100ms_CODE_OPEN
+#  error Section OS_OsTask_DLK_100ms_CODE is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsTask_DLK_100ms_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_function_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsTask_DLK_100ms_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsTask_EMC_PWL_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsTask_EMC_PWL_CODE_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_function_attributes = @ ".OS_OsTask_EMC_PWL_CODE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsTask_EMC_PWL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsTask_EMC_PWL_CODE /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsTask_EMC_PWL_CODE_OPEN
+#  error Section OS_OsTask_EMC_PWL_CODE is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsTask_EMC_PWL_CODE_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_function_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsTask_EMC_PWL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
 #endif
 
@@ -572,6 +656,286 @@
 # undef OS_GLOBALSHARED_CONST_FAST_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
 # undef OS_STOP_SEC_GLOBALSHARED_CONST_FAST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_FAST_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_FAST_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_FAST_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_FAST_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_FAST_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_FAST_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_FAST_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_FAST_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_FAST_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_FAST_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_FAST_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_FAST_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_CONST_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_CONST_FAST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
 #endif
 
@@ -2117,6 +2481,1266 @@
 # undef OS_GLOBALSHARED_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
 # undef OS_STOP_SEC_GLOBALSHARED_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOINIT_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOINIT_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOINIT_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOINIT_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOINIT_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOINIT_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOINIT_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOINIT_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOINIT_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOINIT_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOINIT_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOINIT_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_FAST_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_NOINIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_BOOLEAN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_8BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_16BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_32BIT /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifdef OS_MEMMAP_SECTION_OPEN
+#  error A MemMap section is already open. Nesting is not supported.
+# endif
+# define OS_MEMMAP_SECTION_OPEN
+# define OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED_OPEN
+# ifndef MEMMAP_ERROR
+#  error Each MemMap include may only perform one action. Include MemMap.h separately for each action.
+# endif
+# undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = @ ".OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT" /* PRQA S 0289, 3116 */ /* MD_Os_0289_LinkerSymbol, MD_MSR_1.1 */
+# undef OS_START_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
+#endif
+
+#ifdef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0883 */ /* MD_Os_0883 */
+# ifndef OS_MEMMAP_SECTION_OPEN
+#  error No MemMap section is currently opened.
+# endif
+# undef OS_MEMMAP_SECTION_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# ifndef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED_OPEN
+#  error Section OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED is currently not opened and so cannot be closed.
+# endif
+# undef OS_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED_OPEN /* PRQA S 0841 */ /* MD_MSR_19.6 */
+# pragma default_variable_attributes = /* PRQA S 3116 */ /* MD_MSR_1.1 */
+# undef OS_STOP_SEC_OsApplication_CPUMonitor_VAR_NOCACHE_ZERO_INIT_UNSPECIFIED /* PRQA S 0841 */ /* MD_MSR_19.6 */
 # undef MEMMAP_ERROR /* PRQA S 0841 */ /* MD_MSR_19.6 */
 #endif
 

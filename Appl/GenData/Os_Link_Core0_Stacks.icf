@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Link_Core0_Stacks.icf
- *   Generation Time: 2021-06-21 14:32:34
+ *   Generation Time: 2025-05-05 15:26:15
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -51,6 +51,12 @@ block OS_STACK_OSCORE0_KERNEL_VAR_NOINIT_BLOCK with alignment = 32 { section .OS
 /* Stack: OsCore0_Task_Prio100 (1024 Byte) */
 block OS_STACK_OSCORE0_TASK_PRIO100_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSCORE0_TASK_PRIO100_VAR_NOINIT },
 
+/* Stack: OsCore0_Task_Prio20 (1024 Byte) */
+block OS_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT },
+
+/* Stack: OsCore0_Task_Prio25 (1024 Byte) */
+block OS_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT },
+
 /* Stack: OsCore0_Task_Prio4294967295 (1024 Byte) */
 block OS_STACK_OSCORE0_TASK_PRIO4294967295_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSCORE0_TASK_PRIO4294967295_VAR_NOINIT },
 
@@ -59,6 +65,9 @@ block OS_STACK_OSTASK_APP_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STA
 
 /* Stack: OsTask_BSW_SCHM (1024 Byte) */
 block OS_STACK_OSTASK_BSW_SCHM_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSTASK_BSW_SCHM_VAR_NOINIT },
+
+/* Stack: OsTask_EMC_PWL (1024 Byte) */
+block OS_STACK_OSTASK_EMC_PWL_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSTASK_EMC_PWL_VAR_NOINIT },
 
 
 

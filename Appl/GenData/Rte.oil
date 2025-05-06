@@ -97,6 +97,70 @@
       AUTOSTART = FALSE:"@RO@";
    }:"@RO@@NR@";
 
+   TASK OsTask_CPUload_1s {
+      ACTIVATION = 3:"@RO@";
+      PRIORITY = 20:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s {
+      COUNTER = SystemTimer;
+      ACTION = ACTIVATETASK
+      {
+         TASK = OsTask_CPUload_1s;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   TASK OsTask_DLK_100ms {
+      ACTIVATION = 3:"@RO@";
+      PRIORITY = 25:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms {
+      COUNTER = SystemTimer;
+      ACTION = ACTIVATETASK
+      {
+         TASK = OsTask_DLK_100ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   TASK OsTask_EMC_PWL {
+      ACTIVATION = 1:"@RO@";
+      PRIORITY = 20:"@RO@";
+      SCHEDULE = FULL:"@RO@";
+// TIMING_PROTECTION = FALSE|TRUE; (AUTOSAR OS only)
+      AUTOSTART = FALSE:"@RO@";
+      EVENT = Rte_Ev_Run_EMC_SWC_EMC_Runnable_10ms:"@RO@";
+      EVENT = Rte_Ev_Run_PWL_SWC_PWL_Runnable_20ms:"@RO@";
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_EMC_PWL;
+         EVENT = Rte_Ev_Run_EMC_SWC_EMC_Runnable_10ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
+   ALARM Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms {
+      COUNTER = SystemTimer;
+      ACTION = SETEVENT
+      {
+         TASK = OsTask_EMC_PWL;
+         EVENT = Rte_Ev_Run_PWL_SWC_PWL_Runnable_20ms;
+      }:"@ROC@";
+      AUTOSTART = FALSE:"@RO@";
+   }:"@RO@@NR@";
+
    EVENT Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms {
       MASK = AUTO;
    }:"@ROC@@NR@";
@@ -114,5 +178,13 @@
    }:"@ROC@@NR@";
 
    EVENT Rte_Ev_Run_CpLedTask_LedRunnable {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_EMC_SWC_EMC_Runnable_10ms {
+      MASK = AUTO;
+   }:"@ROC@@NR@";
+
+   EVENT Rte_Ev_Run_PWL_SWC_PWL_Runnable_20ms {
       MASK = AUTO;
    }:"@ROC@@NR@";

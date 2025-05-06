@@ -25,4 +25,20 @@
 		<ARXML>ComponentTypes\CddSbc.arxml</ARXML>
 		<DVG>ComponentTypes\CddSbc.dvg</DVG>
 	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/EMC.arxml</ARXML>
+		<DVG>ComponentTypes/EMC.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/PWL.arxml</ARXML>
+		<DVG>ComponentTypes/PWL.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/LOCK.arxml</ARXML>
+		<DVG>ComponentTypes/LOCK.dvg</DVG>
+	</FILEREF>
+	<FILEREF>
+		<ARXML>ComponentTypes/CPUload.arxml</ARXML>
+		<DVG>ComponentTypes/CPUload.dvg</DVG>
+	</FILEREF>
 </DCF>

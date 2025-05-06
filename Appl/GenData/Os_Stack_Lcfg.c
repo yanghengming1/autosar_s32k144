@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Stack_Lcfg.c
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-05-05 15:26:15
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -125,6 +125,28 @@ OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio100_Dyn, OS_CFG_SIZE_OSCORE0_TASK_
 #include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
 
+#define OS_START_SEC_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT_UNSPECIFIED
+#include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/* Shared Task stack: OsCore0_Task_Prio20 */
+/* User: [OsTask_CPUload_1s] */
+OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio20_Dyn, OS_CFG_SIZE_OSCORE0_TASK_PRIO20_STACK);
+
+#define OS_STOP_SEC_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT_UNSPECIFIED
+#include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+#define OS_START_SEC_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT_UNSPECIFIED
+#include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/* Shared Task stack: OsCore0_Task_Prio25 */
+/* User: [OsTask_DLK_100ms] */
+OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio25_Dyn, OS_CFG_SIZE_OSCORE0_TASK_PRIO25_STACK);
+
+#define OS_STOP_SEC_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT_UNSPECIFIED
+#include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
 #define OS_START_SEC_STACK_OSCORE0_TASK_PRIO4294967295_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
@@ -155,6 +177,17 @@ OS_STACK_DECLARE(OsCfg_Stack_OsTask_APP_Dyn, OS_CFG_SIZE_OSTASK_APP_STACK);
 OS_STACK_DECLARE(OsCfg_Stack_OsTask_BSW_SCHM_Dyn, OS_CFG_SIZE_OSTASK_BSW_SCHM_STACK);
 
 #define OS_STOP_SEC_STACK_OSTASK_BSW_SCHM_VAR_NOINIT_UNSPECIFIED
+#include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+#define OS_START_SEC_STACK_OSTASK_EMC_PWL_VAR_NOINIT_UNSPECIFIED
+#include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/* Shared Task stack: OsTask_EMC_PWL */
+/* User: [OsTask_EMC_PWL] */
+OS_STACK_DECLARE(OsCfg_Stack_OsTask_EMC_PWL_Dyn, OS_CFG_SIZE_OSTASK_EMC_PWL_STACK);
+
+#define OS_STOP_SEC_STACK_OSTASK_EMC_PWL_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
 
@@ -200,6 +233,20 @@ CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio100 =
   /* .HighAddress = */ OS_STACK_GETHIGHADDRESS(OsCfg_Stack_OsCore0_Task_Prio100_Dyn)
 };
 
+/*! Stack configuration data: OsCore0_Task_Prio20 */
+CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio20 =
+{
+  /* .LowAddress  = */ OS_STACK_GETLOWADDRESS(OsCfg_Stack_OsCore0_Task_Prio20_Dyn),
+  /* .HighAddress = */ OS_STACK_GETHIGHADDRESS(OsCfg_Stack_OsCore0_Task_Prio20_Dyn)
+};
+
+/*! Stack configuration data: OsCore0_Task_Prio25 */
+CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio25 =
+{
+  /* .LowAddress  = */ OS_STACK_GETLOWADDRESS(OsCfg_Stack_OsCore0_Task_Prio25_Dyn),
+  /* .HighAddress = */ OS_STACK_GETHIGHADDRESS(OsCfg_Stack_OsCore0_Task_Prio25_Dyn)
+};
+
 /*! Stack configuration data: OsCore0_Task_Prio4294967295 */
 CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio4294967295 =
 {
@@ -219,6 +266,13 @@ CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsTask_BSW_SCHM =
 {
   /* .LowAddress  = */ OS_STACK_GETLOWADDRESS(OsCfg_Stack_OsTask_BSW_SCHM_Dyn),
   /* .HighAddress = */ OS_STACK_GETHIGHADDRESS(OsCfg_Stack_OsTask_BSW_SCHM_Dyn)
+};
+
+/*! Stack configuration data: OsTask_EMC_PWL */
+CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsTask_EMC_PWL =
+{
+  /* .LowAddress  = */ OS_STACK_GETLOWADDRESS(OsCfg_Stack_OsTask_EMC_PWL_Dyn),
+  /* .HighAddress = */ OS_STACK_GETHIGHADDRESS(OsCfg_Stack_OsTask_EMC_PWL_Dyn)
 };
 
 

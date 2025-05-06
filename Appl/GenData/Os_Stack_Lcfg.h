@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Stack_Lcfg.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-05-05 15:26:15
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -120,6 +120,28 @@ extern OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio100_Dyn, OS_CFG_SIZE_OSCORE
 # include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
 
+# define OS_START_SEC_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT_UNSPECIFIED
+# include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/* Shared Task stack: OsCore0_Task_Prio20 */
+/* User: [OsTask_CPUload_1s] */
+extern OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio20_Dyn, OS_CFG_SIZE_OSCORE0_TASK_PRIO20_STACK);
+
+# define OS_STOP_SEC_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT_UNSPECIFIED
+# include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+# define OS_START_SEC_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT_UNSPECIFIED
+# include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/* Shared Task stack: OsCore0_Task_Prio25 */
+/* User: [OsTask_DLK_100ms] */
+extern OS_STACK_DECLARE(OsCfg_Stack_OsCore0_Task_Prio25_Dyn, OS_CFG_SIZE_OSCORE0_TASK_PRIO25_STACK);
+
+# define OS_STOP_SEC_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT_UNSPECIFIED
+# include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
 # define OS_START_SEC_STACK_OSCORE0_TASK_PRIO4294967295_VAR_NOINIT_UNSPECIFIED
 # include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
@@ -153,6 +175,17 @@ extern OS_STACK_DECLARE(OsCfg_Stack_OsTask_BSW_SCHM_Dyn, OS_CFG_SIZE_OSTASK_BSW_
 # include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
 
+# define OS_START_SEC_STACK_OSTASK_EMC_PWL_VAR_NOINIT_UNSPECIFIED
+# include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/* Shared Task stack: OsTask_EMC_PWL */
+/* User: [OsTask_EMC_PWL] */
+extern OS_STACK_DECLARE(OsCfg_Stack_OsTask_EMC_PWL_Dyn, OS_CFG_SIZE_OSTASK_EMC_PWL_STACK);
+
+# define OS_STOP_SEC_STACK_OSTASK_EMC_PWL_VAR_NOINIT_UNSPECIFIED
+# include "Os_MemMap_Stacks.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT DATA PROTOTYPES
  *********************************************************************************************************************/
@@ -175,6 +208,12 @@ extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Kernel;
 /*! Stack configuration data: OsCore0_Task_Prio100 */
 extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio100;
 
+/*! Stack configuration data: OsCore0_Task_Prio20 */
+extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio20;
+
+/*! Stack configuration data: OsCore0_Task_Prio25 */
+extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio25;
+
 /*! Stack configuration data: OsCore0_Task_Prio4294967295 */
 extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsCore0_Task_Prio4294967295;
 
@@ -183,6 +222,9 @@ extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsTask_APP;
 
 /*! Stack configuration data: OsTask_BSW_SCHM */
 extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsTask_BSW_SCHM;
+
+/*! Stack configuration data: OsTask_EMC_PWL */
+extern CONST(Os_StackConfigType, OS_CONST) OsCfg_Stack_OsTask_EMC_PWL;
 
 # define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */

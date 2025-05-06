@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Core_Lcfg.c
- *   Generation Time: 2021-04-17 17:11:59
+ *   Generation Time: 2025-05-05 15:26:15
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -145,6 +145,7 @@ OS_LOCAL CONST(Os_HookConfigRefType, OS_CONST) OsCfg_Core_OsCore0_HookRefs[OS_CF
 /*! Object reference table for core applications: OsCore0 */
 OS_LOCAL CONST(Os_AppConfigRefType, OS_CONST) OsCfg_Core_OsCore0_AppRefs[OS_CFG_NUM_CORE_OSCORE0_APPS + 1] =
 {
+  (Os_AppConfigRefType) &OsCfg_App_OsApplication_CPUMonitor,
   NULL_PTR
 };
 
@@ -175,9 +176,12 @@ OS_LOCAL CONST(Os_StackConfigRefType, OS_CONST) OsCfg_Core_OsCore0_StackRefs[OS_
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore0_Isr_Core,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore0_Kernel,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore0_Task_Prio100,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore0_Task_Prio20,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsCore0_Task_Prio25,
   (Os_StackConfigRefType) &OsCfg_Stack_OsCore0_Task_Prio4294967295,
   (Os_StackConfigRefType) &OsCfg_Stack_OsTask_APP,
   (Os_StackConfigRefType) &OsCfg_Stack_OsTask_BSW_SCHM,
+  (Os_StackConfigRefType) &OsCfg_Stack_OsTask_EMC_PWL,
   NULL_PTR
 };
 

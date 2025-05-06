@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Task_Lcfg.h
- *   Generation Time: 2021-04-15 16:32:16
+ *   Generation Time: 2025-05-05 15:26:15
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -83,6 +83,15 @@ extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OsTask_APP;
 
 /*! Task configuration data: OsTask_BSW_SCHM */
 extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OsTask_BSW_SCHM;
+
+/*! Task configuration data: OsTask_CPUload_1s */
+extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OsTask_CPUload_1s;
+
+/*! Task configuration data: OsTask_DLK_100ms */
+extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OsTask_DLK_100ms;
+
+/*! Task configuration data: OsTask_EMC_PWL */
+extern CONST(Os_TaskConfigType, OS_CONST) OsCfg_Task_OsTask_EMC_PWL;
 
 # define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */

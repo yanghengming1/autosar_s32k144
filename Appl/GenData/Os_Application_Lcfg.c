@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Application_Lcfg.c
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-05-05 16:57:09
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -82,6 +82,9 @@
 #define OS_START_SEC_CORE0_VAR_NOINIT_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
+/*! Dynamic application data: OsApplication_CPUMonitor */
+OS_LOCAL VAR(Os_AppType, OS_VAR_NOINIT) OsCfg_App_OsApplication_CPUMonitor_Dyn;
+
 /*! Dynamic application data: SystemApplication_OsCore0 */
 OS_LOCAL VAR(Os_AppType, OS_VAR_NOINIT) OsCfg_App_SystemApplication_OsCore0_Dyn;
 
@@ -100,6 +103,88 @@ OS_LOCAL VAR(Os_AppType, OS_VAR_NOINIT) OsCfg_App_SystemApplication_OsCore0_Dyn;
 #define OS_START_SEC_CORE0_CONST_UNSPECIFIED
 #include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
 
+/*! Object reference table for application alarms: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_AlarmConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_AlarmRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_ALARMS + 1] =
+{
+  OS_ALARM_CASTCONFIG_ALARMACTIVATETASK_2_ALARM(OsCfg_Alarm_Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s),
+  NULL_PTR
+};
+
+/*! Object reference table for application counters: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_CounterConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_CounterRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_COUNTERS + 1] =
+{
+  NULL_PTR
+};
+
+/*! Object reference table for application hooks: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_HookConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_HookRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_HOOKS + 1] =
+{
+  NULL_PTR
+};
+
+/*! Object reference table for application ISRs: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_IsrConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_IsrRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_ISRS + 1] =
+{
+  NULL_PTR
+};
+
+/*! Object reference table for application category 1 (EXTERNAL) ISRs: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_IsrCat1ConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_Cat1IsrRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_CAT1ISRS + 1] =
+{
+  NULL_PTR
+};
+
+/*! Object reference table for application schedule tables: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_SchTConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_SchTRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_SCHTS + 1] =
+{
+  NULL_PTR
+};
+
+/*! Object reference table for application tasks: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_TaskConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_TaskRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_TASKS + 1] =
+{
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OsTask_CPUload_1s),
+  NULL_PTR
+};
+
+/*! Object reference table for application trusted functions: OsApplication_CPUMonitor */
+OS_LOCAL CONST(Os_ServiceConfigRefType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor_ServiceRefs[OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_SERVICES + 1] =
+{
+  NULL_PTR
+};
+
+/*! Application configuration data: OsApplication_CPUMonitor */
+CONST(Os_AppConfigType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor =
+{
+  /* .Dyn                  = */ &OsCfg_App_OsApplication_CPUMonitor_Dyn,
+  /* .Core                 = */ &OsCfg_Core_OsCore0,
+  /* .AccessRightId        = */ OS_APPID2MASK(OsApplication_CPUMonitor),
+  /* .TaskRefs             = */ OsCfg_App_OsApplication_CPUMonitor_TaskRefs,
+  /* .TaskCount            = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_TASKS,
+  /* .IsrCat2Refs          = */ OsCfg_App_OsApplication_CPUMonitor_IsrRefs,
+  /* .IsrCat2Count         = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_ISRS,
+  /* .IsrCat1Refs          = */ OsCfg_App_OsApplication_CPUMonitor_Cat1IsrRefs,
+  /* .IsrCat1Count         = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_CAT1ISRS,
+  /* .CounterRefs          = */ OsCfg_App_OsApplication_CPUMonitor_CounterRefs,
+  /* .CounterCount         = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_COUNTERS,
+  /* .AlarmRefs            = */ OsCfg_App_OsApplication_CPUMonitor_AlarmRefs,
+  /* .AlarmCount           = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_ALARMS,
+  /* .SchTRefs             = */ OsCfg_App_OsApplication_CPUMonitor_SchTRefs,
+  /* .SchTCount            = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_SCHTS,
+  /* .ServiceFunctions     = */ OsCfg_App_OsApplication_CPUMonitor_ServiceRefs,
+  /* .ServiceFunctionCount = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_SERVICES,
+  /* .StartupHookRef       = */ NULL_PTR,
+  /* .ShutdownHookRef      = */ NULL_PTR,
+  /* .ErrorHookRef         = */ NULL_PTR,
+  /* .HookRefs             = */ OsCfg_App_OsApplication_CPUMonitor_HookRefs,
+  /* .HookCount            = */ OS_CFG_NUM_APP_OSAPPLICATION_CPUMONITOR_HOOKS,
+  /* .RestartTask          = */ NULL_PTR,
+  /* .IsTrusted            = */ TRUE,
+  /* .IsPriveleged         = */ TRUE,
+  /* .HasTimingProtectionDelay = */ FALSE,
+  /* .Id                   = */ OsApplication_CPUMonitor
+};
+
 /*! Object reference table for application alarms: SystemApplication_OsCore0 */
 OS_LOCAL CONST(Os_AlarmConfigRefType, OS_CONST) OsCfg_App_SystemApplication_OsCore0_AlarmRefs[OS_CFG_NUM_APP_SYSTEMAPPLICATION_OSCORE0_ALARMS + 1] =
 {
@@ -108,6 +193,9 @@ OS_LOCAL CONST(Os_AlarmConfigRefType, OS_CONST) OsCfg_App_SystemApplication_OsCo
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_CanTp_CanTp_MainFunction),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable),
   OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_CpLedTask_LedRunnable),
+  OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms),
+  OS_ALARM_CASTCONFIG_ALARMACTIVATETASK_2_ALARM(OsCfg_Alarm_Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms),
+  OS_ALARM_CASTCONFIG_ALARMSETEVENT_2_ALARM(OsCfg_Alarm_Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms),
   NULL_PTR
 };
 
@@ -154,6 +242,8 @@ OS_LOCAL CONST(Os_TaskConfigRefType, OS_CONST) OsCfg_App_SystemApplication_OsCor
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_IdleTask_OsCore0),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OsTask_APP),
   OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OsTask_BSW_SCHM),
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OsTask_DLK_100ms),
+  OS_TASK_CASTCONFIG_TASK_2_TASK(OsCfg_Task_OsTask_EMC_PWL),
   NULL_PTR
 };
 
@@ -205,6 +295,7 @@ CONST(Os_AppConfigType, OS_CONST) OsCfg_App_SystemApplication_OsCore0 =
 /*! Object reference table for applications. */
 CONSTP2CONST(Os_AppConfigType, OS_CONST, OS_CONST) OsCfg_AppRefs[OS_APPID_COUNT + 1] =
 {
+  &OsCfg_App_OsApplication_CPUMonitor,
   &OsCfg_App_SystemApplication_OsCore0,
   NULL_PTR
 };

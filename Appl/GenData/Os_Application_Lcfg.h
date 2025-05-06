@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Application_Lcfg.h
- *   Generation Time: 2021-04-15 16:21:19
+ *   Generation Time: 2025-05-05 15:26:14
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -70,6 +70,9 @@
 
 # define OS_START_SEC_CORE0_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/*! Application configuration data: OsApplication_CPUMonitor */
+extern CONST(Os_AppConfigType, OS_CONST) OsCfg_App_OsApplication_CPUMonitor;
 
 /*! Application configuration data: SystemApplication_OsCore0 */
 extern CONST(Os_AppConfigType, OS_CONST) OsCfg_App_SystemApplication_OsCore0;

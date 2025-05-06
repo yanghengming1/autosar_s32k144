@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Types_Lcfg.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-05-05 16:57:09
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -50,6 +50,7 @@
  *********************************************************************************************************************/
 
 /* OS-Application identifiers. */
+#define OsApplication_CPUMonitor OsApplication_CPUMonitor
 #define SystemApplication_OsCore0 SystemApplication_OsCore0
 
 /* Trusted function identifiers. */
@@ -63,6 +64,9 @@
 #define IdleTask_OsCore0 IdleTask_OsCore0
 #define OsTask_APP OsTask_APP
 #define OsTask_BSW_SCHM OsTask_BSW_SCHM
+#define OsTask_CPUload_1s OsTask_CPUload_1s
+#define OsTask_DLK_100ms OsTask_DLK_100ms
+#define OsTask_EMC_PWL OsTask_EMC_PWL
 
 /* Category 2 ISR identifiers. */
 #define CanIsr_0_BusOff CanIsr_0_BusOff
@@ -74,9 +78,13 @@
 /* Alarm identifiers. */
 #define Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms
 #define Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms
+#define Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s
 #define Rte_Al_TE_CanTp_CanTp_MainFunction Rte_Al_TE_CanTp_CanTp_MainFunction
 #define Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable
 #define Rte_Al_TE_CpLedTask_LedRunnable Rte_Al_TE_CpLedTask_LedRunnable
+#define Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms
+#define Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms
+#define Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms
 
 /* Counter identifiers. */
 #define SystemTimer SystemTimer
@@ -107,8 +115,9 @@
 /*! OS-Application identifiers. */
 typedef enum
 {
-  SystemApplication_OsCore0 = 0, /* 0x00000001 */
-  OS_APPID_COUNT = 1,
+  OsApplication_CPUMonitor = 0, /* 0x00000001 */
+  SystemApplication_OsCore0 = 1, /* 0x00000002 */
+  OS_APPID_COUNT = 2,
   INVALID_OSAPPLICATION = OS_APPID_COUNT
 } ApplicationType;
 
@@ -137,7 +146,10 @@ typedef enum
   IdleTask_OsCore0 = 1,
   OsTask_APP = 2,
   OsTask_BSW_SCHM = 3,
-  OS_TASKID_COUNT = 4,
+  OsTask_CPUload_1s = 4,
+  OsTask_DLK_100ms = 5,
+  OsTask_EMC_PWL = 6,
+  OS_TASKID_COUNT = 7,
   INVALID_TASK = OS_TASKID_COUNT
 } TaskType;
 
@@ -158,10 +170,14 @@ typedef enum
 {
   Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms = 0,
   Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms = 1,
-  Rte_Al_TE_CanTp_CanTp_MainFunction = 2,
-  Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable = 3,
-  Rte_Al_TE_CpLedTask_LedRunnable = 4,
-  OS_ALARMID_COUNT = 5
+  Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s = 2,
+  Rte_Al_TE_CanTp_CanTp_MainFunction = 3,
+  Rte_Al_TE_Cdd_SBC_UJA1169_Sbc_Test_Runnable = 4,
+  Rte_Al_TE_CpLedTask_LedRunnable = 5,
+  Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms = 6,
+  Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms = 7,
+  Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms = 8,
+  OS_ALARMID_COUNT = 9
 } AlarmType;
 
 /*! Counter identifiers. */

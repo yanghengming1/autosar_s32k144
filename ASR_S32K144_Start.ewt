@@ -2442,6 +2442,9 @@
                 <name>$PROJ_DIR$\Appl\GenData\ComM_PBcfg.c</name>
             </file>
             <file>
+                <name>$PROJ_DIR$\Appl\GenData\RteAnalyzer\Source\CPUload.c</name>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\Appl\GenData\Dcm_Lcfg.c</name>
             </file>
             <file>
@@ -2467,6 +2470,12 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\Appl\GenData\EcuM_PBcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Appl\GenData\RteAnalyzer\Source\EMC.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Appl\GenData\RteAnalyzer\Source\LOCK.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\Appl\GenData\Os_AccessCheck_Lcfg.c</name>
@@ -2563,6 +2572,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\Appl\GenData\PduR_PBcfg.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\Appl\GenData\RteAnalyzer\Source\PWL.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\Appl\GenData\Rte.c</name>

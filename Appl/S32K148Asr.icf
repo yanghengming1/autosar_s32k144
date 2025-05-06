@@ -230,7 +230,14 @@ block OS_STACK_OSCORE0_TASK_PRIO100_VAR_NOINIT_BLOCK with alignment = 32 { secti
 block OS_STACK_OSTASK_APP_VAR_NOINIT_BLOCK with alignment = 8 { section .OS_STACK_OSTASK_APP_VAR_NOINIT },
    
 block OS_STACK_OSTASK_BSW_SCHM_VAR_NOINIT_BLOCK with alignment = 8 { section .OS_STACK_OSTASK_BSW_SCHM_VAR_NOINIT},
-                                                                              
+ /* Stack: OsCore0_Task_Prio20 (1024 Byte) */
+block OS_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSCORE0_TASK_PRIO20_VAR_NOINIT },
+
+/* Stack: OsCore0_Task_Prio25 (1024 Byte) */
+block OS_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSCORE0_TASK_PRIO25_VAR_NOINIT },
+
+/* Stack: OsTask_EMC_PWL (1024 Byte) */
+block OS_STACK_OSTASK_EMC_PWL_VAR_NOINIT_BLOCK with alignment = 32 { section .OS_STACK_OSTASK_EMC_PWL_VAR_NOINIT },
    section OS_STACKS_CORE0_NOINIT_LIMIT_SEC
 };
 "INTERNAL_RAM__OS_STACKS_CORE0_NOINIT": place in INTERNAL_RAM

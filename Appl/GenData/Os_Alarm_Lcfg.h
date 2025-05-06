@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Alarm_Lcfg.h
- *   Generation Time: 2021-06-06 16:46:36
+ *   Generation Time: 2025-05-05 16:57:09
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -77,6 +77,9 @@ extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask
 /*! Alarm configuration data: Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms;
 
+/*! Alarm configuration data: Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s */
+extern CONST(Os_AlarmActivateTaskConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s;
+
 /*! Alarm configuration data: Rte_Al_TE_CanTp_CanTp_MainFunction */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_CanTp_CanTp_MainFunction;
 
@@ -85,6 +88,15 @@ extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_Cdd_SBC
 
 /*! Alarm configuration data: Rte_Al_TE_CpLedTask_LedRunnable */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_CpLedTask_LedRunnable;
+
+/*! Alarm configuration data: Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms */
+extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms;
+
+/*! Alarm configuration data: Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms */
+extern CONST(Os_AlarmActivateTaskConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms;
+
+/*! Alarm configuration data: Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms */
+extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms;
 
 # define OS_STOP_SEC_CORE0_CONST_UNSPECIFIED
 # include "Os_MemMap_OsSections.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */

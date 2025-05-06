@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: EcuM_Cfg.h
- *   Generation Time: 2021-06-21 14:32:31
+ *   Generation Time: 2025-05-05 15:26:14
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -124,7 +124,7 @@
 #define ECUM_RESETMODECOUNT                                           (4u)
 #define ECUM_SHUTDOWNCAUSECOUNT                                       (4u)
 #define ECUM_NUMBER_OF_CORES                                          (1u)
-#define ECUM_NUMBER_OF_OS_APPLICATIONS                                (1u)
+#define ECUM_NUMBER_OF_OS_APPLICATIONS                                (2u)
 
 #define ECUM_CORE_ID_STARTUP                                          OS_CORE_ID_MASTER
 #define ECUM_CORE_ID_BSW                                              OS_CORE_ID_MASTER
