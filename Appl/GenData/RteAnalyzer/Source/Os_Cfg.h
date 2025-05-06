@@ -36,16 +36,22 @@
 # define Rte_Al_TE_CpLedTask_LedRunnable (1U)
 # define Rte_Al_TE2_OsTask_BSW_SCHM_0_10ms (2U)
 # define Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms (3U)
+<<<<<<< HEAD
 # define Rte_Al_TE_CanTp_CanTp_MainFunction (4U)
 # define Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s (5U)
 # define Rte_Al_TE_LOCK_SWC_DLK_Runnable_100ms (6U)
 # define Rte_Al_TE_EMC_SWC_EMC_Runnable_10ms (7U)
 # define Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms (8U)
+=======
+# define Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms (4U)
+# define Rte_Al_TE_CanTp_CanTp_MainFunction (5U)
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 
 /* Events */
 # define Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_10ms (0x01)
-# define Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_20ms (0x04)
-# define Rte_Ev_Run_CanTp_CanTp_MainFunction (0x02)
+# define Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_20ms (0x08)
+# define Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_50ms (0x02)
+# define Rte_Ev_Run_CanTp_CanTp_MainFunction (0x04)
 # define Rte_Ev_Run_Cdd_SBC_UJA1169_Sbc_Test_Runnable (0x01)
 # define Rte_Ev_Run_CpLedTask_LedRunnable (0x02)
 # define Rte_Ev_Run_EMC_SWC_EMC_Runnable_10ms (0x01)

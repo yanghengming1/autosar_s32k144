@@ -21,7 +21,11 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Alarm_Lcfg.h
+<<<<<<< HEAD
  *   Generation Time: 2025-05-05 16:57:09
+=======
+ *   Generation Time: 2025-04-29 17:39:53
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -77,8 +81,13 @@ extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask
 /*! Alarm configuration data: Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask_BSW_SCHM_0_20ms;
 
+<<<<<<< HEAD
 /*! Alarm configuration data: Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s */
 extern CONST(Os_AlarmActivateTaskConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_CPUload_SWC_CPUload_Runnable_1s;
+=======
+/*! Alarm configuration data: Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms */
+extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms;
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 
 /*! Alarm configuration data: Rte_Al_TE_CanTp_CanTp_MainFunction */
 extern CONST(Os_AlarmSetEventConfigType, OS_CONST) OsCfg_Alarm_Rte_Al_TE_CanTp_CanTp_MainFunction;

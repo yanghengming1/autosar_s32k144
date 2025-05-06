@@ -850,6 +850,46 @@
             "Source",
             "..",
             "../Components",
+            "../Components/Wdg"
+         ],
+         "SourceFile" : "Source/Wdg.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "F:/study/AUTOSAR_TOOLs/S32K144_SIP/MICROSAR/CBD1800257_D01_S32K1xx/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_Wdg"
+         ],
+         "SourceFile" : "Source/TSC_SchM_Wdg.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "F:/study/AUTOSAR_TOOLs/S32K144_SIP/MICROSAR/CBD1800257_D01_S32K1xx/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/WdgM"
+         ],
+         "SourceFile" : "Source/WdgM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "F:/study/AUTOSAR_TOOLs/S32K144_SIP/MICROSAR/CBD1800257_D01_S32K1xx/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
+            "../Components/TSC_SchM_WdgM"
+         ],
+         "SourceFile" : "Source/TSC_SchM_WdgM.c"
+      },
+      {
+         "IncludeDirectoryList" : [
+            "F:/study/AUTOSAR_TOOLs/S32K144_SIP/MICROSAR/CBD1800257_D01_S32K1xx/Misc/RteAnalyzer/include",
+            "Source",
+            "..",
+            "../Components",
             "../Components/TSC_BswM"
          ],
          "SourceFile" : "Source/TSC_BswM.c"
@@ -1060,6 +1100,7 @@
             "Source",
             "..",
             "../Components",
+<<<<<<< HEAD
             "../Components/PWL"
          ],
          "SourceFile" : "Source/PWL.c"
@@ -1073,6 +1114,11 @@
             "../Components/TSC_PWL"
          ],
          "SourceFile" : "Source/TSC_PWL.c"
+=======
+            "../Components/TSC_WdgM"
+         ],
+         "SourceFile" : "Source/TSC_WdgM.c"
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
       }
    ],
    "TaskList" : [

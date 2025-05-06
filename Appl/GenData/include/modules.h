@@ -207,7 +207,7 @@ extern "C" {
 /** 
 * @brief This constant used for other modules to check if WDG is present in the project.  
 */
-#define USE_WDG_MODULE              (STD_OFF)
+#define USE_WDG_MODULE              (STD_ON)
 
 /*==================================================================================================
 *                                             ENUMS

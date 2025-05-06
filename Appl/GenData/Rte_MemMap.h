@@ -408,11 +408,19 @@
  *********************************************************************************************************************/
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!         << Start of memory mapping implementation >>         DO NOT CHANGE THIS COMMENT!
+<<<<<<< HEAD
  * Symbol: RTE_START_SEC_PWL_APPL_CODE
  *********************************************************************************************************************/
 
 #ifdef RTE_START_SEC_PWL_APPL_CODE
 # undef RTE_START_SEC_PWL_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+=======
+ * Symbol: RTE_START_SEC_WDGM_APPL_CODE
+ *********************************************************************************************************************/
+
+#ifdef RTE_START_SEC_WDGM_APPL_CODE
+# undef RTE_START_SEC_WDGM_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 # define START_SEC_CODE
 #endif
 
@@ -592,11 +600,19 @@
  *********************************************************************************************************************/
 /**********************************************************************************************************************
  * DO NOT CHANGE THIS COMMENT!         << Start of memory mapping implementation >>         DO NOT CHANGE THIS COMMENT!
+<<<<<<< HEAD
  * Symbol: RTE_STOP_SEC_PWL_APPL_CODE
  *********************************************************************************************************************/
 
 #ifdef RTE_STOP_SEC_PWL_APPL_CODE
 # undef RTE_STOP_SEC_PWL_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+=======
+ * Symbol: RTE_STOP_SEC_WDGM_APPL_CODE
+ *********************************************************************************************************************/
+
+#ifdef RTE_STOP_SEC_WDGM_APPL_CODE
+# undef RTE_STOP_SEC_WDGM_APPL_CODE /* PRQA S 0841 */ /* MD_MSR_19.6 */
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 # define STOP_SEC_CODE
 #endif
 

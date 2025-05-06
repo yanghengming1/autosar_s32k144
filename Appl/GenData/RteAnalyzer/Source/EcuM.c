@@ -92,6 +92,12 @@
  * SelectShutdownTarget of Port Interface EcuM_ShutdownTarget
  *   
  *
+ *
+ * Mode Declaration Groups:
+ * ========================
+ * WdgM_Mode
+ *   
+ *
  *********************************************************************************************************************/
 
 #include "Rte_EcuM.h" /* PRQA S 0857 */ /* MD_MSR_1.1_857 */

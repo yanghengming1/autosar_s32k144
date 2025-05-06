@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Entry_Cfg.h
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-04-29 17:39:53
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -40,8 +40,8 @@
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 
-# define OS_CFG_HAL_NUMBER_OF_ISR        (5)
-# define OS_CFG_HAL_GLOBAL_DISABLE_LEVEL (32)
+# define OS_CFG_HAL_NUMBER_OF_ISR        (7)
+# define OS_CFG_HAL_GLOBAL_DISABLE_LEVEL (20)
 
 
 

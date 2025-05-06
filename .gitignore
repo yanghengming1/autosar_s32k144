@@ -1,0 +1,6 @@
+
+/.vscode
+/Debug/*
+/S32K144_Start.~lock
+/.tgitconfig
+/Log/*

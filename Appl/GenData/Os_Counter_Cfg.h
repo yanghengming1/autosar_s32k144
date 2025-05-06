@@ -21,7 +21,11 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Counter_Cfg.h
+<<<<<<< HEAD
  *   Generation Time: 2025-05-05 16:57:09
+=======
+ *   Generation Time: 2025-04-29 17:39:53
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -45,7 +49,11 @@
  *********************************************************************************************************************/
 
 /*! Number of counter jobs: SystemTimer */
+<<<<<<< HEAD
 # define OS_CFG_NUM_COUNTER_SYSTEMTIMER_JOBS     (9uL)
+=======
+# define OS_CFG_NUM_COUNTER_SYSTEMTIMER_JOBS     (6uL)
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 
 
 /**********************************************************************************************************************

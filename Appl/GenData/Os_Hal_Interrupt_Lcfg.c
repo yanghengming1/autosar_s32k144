@@ -21,7 +21,7 @@
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
  *              File: Os_Hal_Interrupt_Lcfg.c
- *   Generation Time: 2025-04-28 20:45:27
+ *   Generation Time: 2025-04-29 17:39:53
  *           Project: S32K144_Start - Version 1.0
  *          Delivery: CBD1800257_D01
  *      Tool Version: DaVinci Configurator  5.18.37 SP1
@@ -121,6 +121,24 @@ CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_GptIsr_LpitChannel0 =
   /* .Level  = */ 70uL,
   /* .SystemInterruptSource = */ 64uL,
   /* .CoreInterruptSource = */ 48uL,
+  /* .Mapping = */ OS_HAL_ISR_MAPPING_INACTIVE  
+};
+
+/*! HAL ISR configuration data: OsIsr_Ftm1Channel0 */
+CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_OsIsr_Ftm1Channel0 =
+{
+  /* .Level  = */ 65uL,
+  /* .SystemInterruptSource = */ 121uL,
+  /* .CoreInterruptSource = */ 105uL,
+  /* .Mapping = */ OS_HAL_ISR_MAPPING_INACTIVE  
+};
+
+/*! HAL ISR configuration data: OsIsr_WDG */
+CONST(Os_Hal_IntIsrConfigType, OS_CONST) OsCfg_Hal_IntIsr_OsIsr_WDG =
+{
+  /* .Level  = */ 20uL,
+  /* .SystemInterruptSource = */ 38uL,
+  /* .CoreInterruptSource = */ 22uL,
   /* .Mapping = */ OS_HAL_ISR_MAPPING_INACTIVE  
 };
 

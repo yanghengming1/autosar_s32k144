@@ -129,7 +129,11 @@ Rte_EMC.h<br>
 Rte_EcuM.h<br>
 Rte_LOCK.h<br>
 Rte_Os_OsCore0_swc.h<br>
+<<<<<<< HEAD
 Rte_PWL.h<br>
+=======
+Rte_WdgM.h<br>
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 Rte_BswM_Type.h<br>
 Rte_CPUload_Type.h<br>
 Rte_CddSbc_Type.h<br>
@@ -143,7 +147,11 @@ Rte_EMC_Type.h<br>
 Rte_EcuM_Type.h<br>
 Rte_LOCK_Type.h<br>
 Rte_Os_OsCore0_swc_Type.h<br>
+<<<<<<< HEAD
 Rte_PWL_Type.h<br>
+=======
+Rte_WdgM_Type.h<br>
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 Rte_Main.h<br>
 Rte_Type.h<br>
 Rte_DataHandleType.h<br>
@@ -166,7 +174,11 @@ EMC_MemMap.h<br>
 EcuM_MemMap.h<br>
 LOCK_MemMap.h<br>
 Os_OsCore0_swc_MemMap.h<br>
+<<<<<<< HEAD
 PWL_MemMap.h<br>
+=======
+WdgM_MemMap.h<br>
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 Rte_Compiler_Cfg.h<br>
 Rte.c<br>
 Rte_cfg.mak<br>
@@ -190,6 +202,8 @@ SchM_Mcu.h<br>
 SchM_PduR.h<br>
 SchM_Port.h<br>
 SchM_Spi.h<br>
+SchM_Wdg.h<br>
+SchM_WdgM.h<br>
 SchM_BswM_Type.h<br>
 SchM_Can_Type.h<br>
 SchM_CanIf_Type.h<br>
@@ -207,6 +221,8 @@ SchM_Mcu_Type.h<br>
 SchM_PduR_Type.h<br>
 SchM_Port_Type.h<br>
 SchM_Spi_Type.h<br>
+SchM_Wdg_Type.h<br>
+SchM_WdgM_Type.h<br>
 Rte.oil<br>
 Rte_Needs.ecuc.arxml<br>
 <br>
@@ -938,11 +954,75 @@ CONST Size: 0 Bytes<br>
 <TD>n/a</TD>
 </TR>
 <TR>
+<<<<<<< HEAD
 <TD><B>TimingEvent</B> Cyclic 20ms</TD>
 <TD>PWL_Runnable_20ms</TD>
 <TD>OsTask_EMC_PWL</TD>
 <TD>Rte_Ev_Run_PWL_SWC_PWL_Runnable_20ms</TD>
 <TD>Rte_Al_TE_PWL_SWC_PWL_Runnable_20ms</TD>
+=======
+<TD><B>OperationInvokedEvent</B> WdgM::alive_WdgMSupervisedEntity::CheckpointReached</TD>
+<TD>CheckpointReached</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::general::GetFirstExpiredSEID</TD>
+<TD>GetFirstExpiredSEID</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::general::GetGlobalStatus</TD>
+<TD>GetGlobalStatus</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::general::GetLocalStatus</TD>
+<TD>GetLocalStatus</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::localStatus_WdgMSupervisedEntity::GetLocalStatus</TD>
+<TD>GetLocalStatus</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::general::GetMode</TD>
+<TD>GetMode</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::general::PerformReset</TD>
+<TD>PerformReset</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>OperationInvokedEvent</B> WdgM::general::SetMode</TD>
+<TD>SetMode</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+<TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 50ms</TD>
+<TD>WdgM_MainFunction</TD>
+<TD>OsTask_BSW_SCHM</TD>
+<TD>Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_50ms</TD>
+<TD>Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms</TD>
+>>>>>>> b7b035b69e0cb1b08d21bee52dc19eda703272f2
 </TR>
 </TABLE>
 <br>
@@ -1051,6 +1131,13 @@ CONST Size: 0 Bytes<br>
 <TD>n/a</TD>
 <TD>n/a</TD>
 <TD>n/a</TD>
+</TR>
+<TR>
+<TD><B>TimingEvent</B> Cyclic 50ms</TD>
+<TD>WdgM_MainFunction</TD>
+<TD>OsTask_BSW_SCHM</TD>
+<TD>Rte_Ev_Cyclic2_OsTask_BSW_SCHM_0_50ms</TD>
+<TD>Rte_Al_TE2_OsTask_BSW_SCHM_0_50ms</TD>
 </TR>
 </TABLE>
 <P ALIGN=LEFT>
